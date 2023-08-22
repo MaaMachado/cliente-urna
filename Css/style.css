@@ -1,0 +1,102 @@
+/* Estilização Geral */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body {
+    width: 100%;
+    min-height: 100%;
+    background-color: #E4E2CE;
+  } 
+  a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  #border_total{
+    border: 2px solid #43413B;
+    margin: 1%;
+    padding: 3%;
+  }
+
+  /*HEADER - TÍTULO*/
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+    color: #000000;
+    padding: 0.5rem 1rem;
+  }
+  b{
+    margin-left: 1rem;
+    background-color: #f3f3f3;
+    padding: 0.5rem 1rem;
+  }
+
+   /*SECTION - PRIMEIRO RETÂNGULO*/
+   /* Estilos para os retângulos */
+   .retangulo1 {
+    width: 1152px;
+    height: 50px;
+    background: #706B68;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+    margin: auto;
+  }
+  .retangulo2 {
+    width: 1152px;
+    height: 50px;
+    background: #706B68;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  /* Estilos para o texto */
+  .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    line-height: 30px;
+    color: #000000;
+  
+  }
+  
+  /* Estilos para a seta */
+  .seta {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid black;
+    position: absolute;
+    right: 30px;
+    transform: rotate(90deg);
+  }
+  
+  /* Estilos para a aba */
+  .aba {
+    margin: auto;
+    width: 1152px;
+    padding: 20px;
+    background: #E1DAD4;
+    border-radius: 0px 0px 10px 10px;
+  }
