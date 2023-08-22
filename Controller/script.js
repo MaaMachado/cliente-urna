@@ -127,16 +127,45 @@ document.getElementById("num_voto").addEventListener("change", (e)=>{
     }
 })
 
-document.getElementById("btn_form_registro").addEventListener("click", (e)=>{
-    if (document.getElementById("num_voto").value == ""){
-        alert("Selecione um candidato para votar!")
-    }else{
-    removerElementos()
-    div_registrar.innerHTML = `<h2>VOTO DO ELEITOR ${nome_usuario} REGISTRADO COM SUCESSO!</h2>
+//LIGAR A API - registro de votos (contagem do servidor)
+document.getElementById("btn_form_registro").addEventListener("click", async (e) => {
+    if (document.getElementById("num_voto").value == "") {
+        alert("Selecione um candidato para votar!");
+    } else {
+        removerElementos();
+        div_registrar.innerHTML = `<h2>VOTO DO ELEITOR ${nome_usuario} REGISTRADO COM SUCESSO!</h2>
                                 <p>Você votou em <strong>${candidato_escolhido}</strong>.
                                  Aguarde o resultado das eleições!.</p>`;
+        const voto = {
+            nome: nome_usuario,
+            cpf: cpf_usuario,
+            candidato: candidato_escolhido
+        };
+        try {
+            const response = await fetch('http://localhost:3000/api/votos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(voto)
+            });
+            const data = await response.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error('Erro ao enviar voto:', error);
+        }
     }
-})
+});
+
+// Requisição GET para obter os votos
+fetch('http://localhost:3000/api/votos')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Erro ao obter votos:', error);
+  });
 
 function mudarCandidatoInfo(img, nome, partido, vice, index){
     img.src = candidatos[index].imagem
