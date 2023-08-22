@@ -1,4 +1,42 @@
+/* Caixa que vai aparecer o nome e cpf registrado do Cliente */
 #boxName{
     display: flex;
     justify-content: space-between;
+    border: 1px solid #706b68a1;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    text-align: center;
+    box-shadow: 10px 10px 20px #c8c8c8, -10px -10px 20px #fefefe;
+    border-radius: 6px;
+}
+#boxName div{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 100;
+    font-style: oblique;
+}
+#btn_erro{
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    color: black;
+    font-weight: bolder;
+    padding: 0.4rem 0.6rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#btn_erro:hover{
+    box-shadow: 1px 2px black;
+
+}
+
+/* Dados dos candidatos que o Cliente vai escolher */
+#abaFormulario2 h2{
+    font-size: xx-large;
+    margin: 1.8% auto 0.5%;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
 }

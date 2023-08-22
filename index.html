@@ -94,14 +94,15 @@
         </div>
         <div class="aba" id="abaFormulario2">
             <div id="boxName">
-                <div>Cidadão: <span id="nome_cliente"></span></div>
+                <div>Nome: <span id="nome_cliente"></span></div>
                 <div>CPF: <span id="cpf_cliente"></span></div>
                 <!-- Se quiser colocar outro dado pessoal / erro no registro dos dados -->
                 <button id="btn_erro" type="button">X</button>
             </div>
             <h2>Presidente (a)</h2>
             <br>
-            <div id="box">
+            <div class="box">
+            <div id="dadosVoto">
             <form action="" method="post">
                 <label for="number">Número:</label>
                 <select id="num_voto" name="number">
@@ -117,12 +118,15 @@
             <div>Nome: <span class="nome_dados"></span></div>
             <div>Partido: <span class="partido_dados"></span></div>
             <div>Vice-Presidente: <span class="vice_dados"></span></div>
-            </div>
-            <div id="box">
-                <img src="img/bozo.pnj_resized_resized_resized.jpg" alt="">
+        </div>
+
+            <div id="imagens">
+        
                 <span class="imgP_dados"></span>
                 <br>
                 <span class="imgV_dados"></span>
+                
+            </div>
             </div>
 
                 <button id="btn_form_registro" type="button" onclick="abrirVoto()" class="btn">

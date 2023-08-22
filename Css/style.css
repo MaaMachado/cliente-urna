@@ -47,6 +47,8 @@ h1{
     width: 65.5%;
     height: 3.125rem;
     background: #706B68;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -96,6 +98,8 @@ h1{
     width: 65.5%;
     padding: 20px;
     background: #E1DAD4;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
   }
   .box_form{
     display: flex;
@@ -145,7 +149,7 @@ h1{
     color: #000000;
   }
 
-  /* Botão do form 1 - Começar */
+  /* Botão do form 1 - Começar/Registrar */
   .btn {
     padding: 0.1em 0.25em;
     width: 12em;
