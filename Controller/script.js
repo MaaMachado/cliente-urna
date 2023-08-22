@@ -1,18 +1,16 @@
+import { candidatos } from "/Controller/lists.js";
 const btn_mudar_sessao = document.getElementById("btn_form_start");
 const div_dados_usuario = document.getElementById("abaFormulario1");
 const div_registrar = document.getElementById("abaFormulario2");
-
+let candidato_escolhido = ""
+div_registrar.style.visibility = "hidden"
 let nome_usuario = ""
 let cpf_usuario = ""
 let email_usuario = ""
 let cidade_usuario = ""
 
-div_registrar.style.visibility = "hidden"
-
-
 
 btn_mudar_sessao.addEventListener("click", (e) => {    
-
 nome_usuario = document.getElementById('nome').value
 cpf_usuario = document.getElementById('cpf').value
 email_usuario = document.getElementById('email').value
@@ -25,7 +23,7 @@ const estado_value = estado.value
 if(verificar_input(nome_usuario, cpf_usuario, email_usuario, estado,cidade_usuario)){ 
     mudar_sessão( )
 }else{
-    console.log('Não foi')
+    alert("Problema ao mudar de sessão!")
 }
 })
 
@@ -84,4 +82,59 @@ btn_mudar_sessao.addEventListener("click", function() {
 function inserir_dados_usu(){
     document.getElementById("nome_cliente").innerHTML = nome_usuario
     document.getElementById("cpf_cliente").innerHTML = cpf_usuario
+}
+
+
+document.getElementById("num_voto").addEventListener("change", (e)=>{
+    let opcoes_select = document.getElementById('num_voto')
+    let opcao_index = opcoes_select.selectedIndex -1
+    let imagem_candidato = document.getElementById("img_candidato")
+    let nome_candidatos = document.getElementById('nome_dados')
+    let partido_candidatos = document.getElementById('partido_dados')
+    let vice_candidatos = document.getElementById('vice_dados')
+    console.log(opcoes_select.value);
+
+    if(opcoes_select.value == candidatos[0].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[0].nome
+    }else if(opcoes_select.value == candidatos[1].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[1].nome
+    }else if(opcoes_select.value == candidatos[2].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[2].nome
+    }else if(opcoes_select.value == candidatos[3].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[3].nome
+    }else if(opcoes_select.value == candidatos[4].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[4].nome
+    }else if(opcoes_select.value == candidatos[5].numero_eleitoral){
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        candidato_escolhido = candidatos[5].nome
+    }
+})
+
+document.getElementById("btn_form_registro").addEventListener("click", (e)=>{
+    if (document.getElementById("num_voto").value == ""){
+        alert("Selecione um candidato para votar!")
+    }else{
+    removerElementos()
+    div_registrar.innerHTML = `<h2>VOTO DO ELEITOR ${nome_usuario} REGISTRADO COM SUCESSO!</h2>
+                                <p>Você votou em <strong>${candidato_escolhido}</strong>.
+                                 Aguarde o resultado das eleições!.</p>`;
+    }
+})
+
+function mudarCandidatoInfo(img, nome, partido, vice, index){
+    img.src = candidatos[index].imagem
+    nome.innerHTML = candidatos[index].nome
+    partido.textContent = candidatos[index].partido
+    vice.textContent = candidatos[index].vice
+}
+
+function removerElementos(){
+    while (div_registrar.firstChild){
+        div_registrar.removeChild(div_registrar.firstChild)
+    }
 }
