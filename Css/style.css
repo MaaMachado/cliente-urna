@@ -17,7 +17,7 @@
 
   #border_total{
     border: 2px solid #43413B;
-    margin: 3% 2%;
+    margin: 1% 2%;
     padding: 3%;
   }
 
@@ -100,18 +100,88 @@ h1{
   .box_form{
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
+/* Estilos para os itens do form 1 */
   #nome, #estado_cliente{
     width: 45%;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    border: 1px solid #E4E2CD;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: medium;
+    line-height: 24px;
+    color: #000000;
   }
   #email{
     width: 45%;
+    margin: 0 auto 1rem;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    border: 1px solid #E4E2CD;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: medium;
+    line-height: 24px;
+    color: #000000;
   }
   #cpf, #cidade_cliente{
     width: 45%;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    border: 1px solid #E4E2CD;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: medium;
+    line-height: 24px;
+    color: #000000;
   }
 
+  /* Botão do form 1 - Começar */
+  .btn {
+    padding: 0.1em 0.25em;
+    width: 12em;
+    height: 3.2em;
+    background-color: #312f2e;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .btn .art_btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 7.5em;
+    height: 1.8em;
+    background-color: #706B68;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  }
+  
+  .btn .art_btn:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+  }
+  
+  .btn .art_btn:not(hover) {
+    transition: all 1s;
+  }
 
   /* Fotter - logos */
   footer{
