@@ -1,20 +1,33 @@
-function abrirVoto(){    
-const nome_usuario = document.getElementById('nome').value
-const cpf_usuario = document.getElementById('cpf').value
-const email_usuario = document.getElementById('email').value
-const cidade_usuario = document.getElementById('cidade_cliente').value
+const btn_mudar_sessao = document.getElementById("btn_form_start");
+const div_dados_usuario = document.getElementById("abaFormulario1");
+const div_registrar = document.getElementById("abaFormulario2");
 
+let nome_usuario = ""
+let cpf_usuario = ""
+let email_usuario = ""
+let cidade_usuario = ""
+
+div_registrar.style.visibility = "hidden"
+
+
+
+btn_mudar_sessao.addEventListener("click", (e) => {    
+
+nome_usuario = document.getElementById('nome').value
+cpf_usuario = document.getElementById('cpf').value
+email_usuario = document.getElementById('email').value
+cidade_usuario = document.getElementById('cidade_cliente').value
 
 const estado = document.getElementById('estado_cliente')
 const estado_value = estado.value
 
 
 if(verificar_input(nome_usuario, cpf_usuario, email_usuario, estado,cidade_usuario)){ 
-    console.log('foi')
+    mudar_sessão( )
 }else{
     console.log('Não foi')
 }
-}
+})
 
 function verificar_input(nome,cpf,email, estado, cidade_cliente){
     if (nome == "" && nome.length <= 10){
@@ -49,6 +62,26 @@ function mudar_cor_bordar(elemento){
 function validar_email(email) {
     var resposta = /\S+@\S+\.\S+/;
     return resposta.test(email);
-  }
+}
 
-console.log("Validar email: ", validar_email("thi"))
+function mudar_sessão(){
+
+btn_mudar_sessao.addEventListener("click", function() {
+  if (div_dados_usuario.classList.contains("visible")) {
+    div_dados_usuario.classList.remove("visible");
+    div_dados_usuario.classList.add("hidden");
+    div_dados_usuario.innerHTML = "<h2>Seus Dados Foram Registrados com Sucesso!</h2><p>Agora você já pode votar!.</p>";
+    div_registrar.style.visibility = "visible"
+    inserir_dados_usu()
+  } else {
+    div_dados_usuario.classList.remove("hidden");
+    div_dados_usuario.classList.add("visible");
+    
+  }
+});
+}
+
+function inserir_dados_usu(){
+    document.getElementById("nome_cliente").innerHTML = nome_usuario
+    document.getElementById("cpf_cliente").innerHTML = cpf_usuario
+}
