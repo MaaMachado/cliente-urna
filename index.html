@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Css/img/urna-eleitoral.png" type="image/x-icon">
     <link rel="stylesheet" href="Css/style.css">
-    <title>Login || Urna Eleitoral</title>
+    <link rel="stylesheet" href="Css/art.css">
+    <title>Urna Eleitoral || Registro e Voto</title>
 </head>
 <body>
 
@@ -14,7 +16,7 @@
     </header>
 
    
-    <section>
+    <section id="dados">
 
         <!-- Primeiro retângulo - Dados Pessoais -->
         <div class="retangulo1" onclick="toggleAba1()">
@@ -23,15 +25,18 @@
         </div>
         <div class="aba" id="abaFormulario1">
             <form class="formulario">
+                <div class="box_form">
                 <input type="text" id="nome" required placeholder="Nome">
 
                 <input type="text" id="cpf" required placeholder="CPF">
+                </div>
                 <br>
 
                 <input type="email" id="email" required placeholder="E-mail">
 
                 <br>
 
+                <div class="box_form">
                 <select id="estado_cliente" name="estado">
                     <option value="">Estado:</option>
                     <option value="AC">Acre</option>
@@ -65,15 +70,22 @@
 
                 <input type="text" name="cidade" id="cidade_cliente" placeholder="Cidade">
 
+                </div>
                 <br><br>
-                <button id="btn_form_start" type="button" onclick="abrirVoto()" class="btn">COMEÇAR</button>
+
+                <button id="btn_form_start" type="button" onclick="abrirVoto()" class="btn">
+                    <span class="art_btn">
+                        COMEÇAR
+                    </span>
+                </button>
+
             </form>
         </div>
         <br>
 
     </section>
 
-    <section>
+    <section id="voto">
 
         <!-- Segundo retângulo - Voto -->
         <div class="retangulo2" onclick="toggleAba2()">
@@ -83,7 +95,7 @@
         <div class="aba" id="abaFormulario2">
             <div id="boxName">
                 <div>Cidadão: <span id="nome_cliente"></span></div>
-                <div>CPF:: <span id="cpf_cliente"></span></div>
+                <div>CPF: <span id="cpf_cliente"></span></div>
                 <!-- Se quiser colocar outro dado pessoal / erro no registro dos dados -->
                 <button id="btn_erro" type="button">X</button>
             </div>
@@ -105,17 +117,19 @@
                 <span class="imgV_dados"></span>
             </div>
 
-            <div id="btn_registro">
-                <button id="btn_form_zerar" type="button" onclick="abrirVoto()" class="btn">CORRIGIR</button>
-                <button id="btn_form_registro" type="button" onclick="abrirVoto()" class="btn">REGISTRAR</button>
-            </div>
+                <button id="btn_form_registro" type="button" onclick="abrirVoto()" class="btn">
+                    <span class="art_btn">
+                        REGISTRAR
+                    </span>
+                </button>
+            
         </div>
         <br>
 
     </section>
 
     <footer>
-        <img src="Css/img/hastag.jpeg" alt="#seuvotofazopaís" class="hastag">
+        <img src="Css/img/hastag.png" alt="#seuvotofazopaís" class="hastag">
         <img src="Css/img/logoTRE.png" alt="Logo da TRE" class="tre">
     </footer>
     
