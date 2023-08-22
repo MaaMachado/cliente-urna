@@ -32,7 +32,7 @@ function verificar_input(nome,cpf,email, estado, cidade_cliente){
         alert("NOME: Este campo deve conter seu nome e sobrenome")
         mudar_cor_bordar('nome')
         return false
-    }else if(cpf == "" && cpf.length < 11){
+    }else if(cpf == "" && cpf.length <= 11 && typeof(cpf) != "number"){
         alert("CPF: Este campo não deve estar vazio ou ter menos de 11 caracteres")
         mudar_cor_bordar('cpf')
         return false
@@ -81,9 +81,21 @@ btn_mudar_sessao.addEventListener("click", function() {
 
 function inserir_dados_usu(){
     document.getElementById("nome_cliente").innerHTML = nome_usuario
-    document.getElementById("cpf_cliente").innerHTML = cpf_usuario
+    document.getElementById("cpf_cliente").innerHTML = formatar_cpf()
 }
 
+function formatar_cpf(){
+    let cpf_formatado = ""
+    for (let i = 0; i < cpf_usuario.length; i++) {
+        cpf_formatado += cpf_usuario[i];
+        if (i === 2 || i === 5) {
+          cpf_formatado += '.';
+        } else if (i === 8) {
+          cpf_formatado += '-';
+        }
+      }
+    return cpf_formatado
+}
 
 document.getElementById("num_voto").addEventListener("change", (e)=>{
     let opcoes_select = document.getElementById('num_voto')
