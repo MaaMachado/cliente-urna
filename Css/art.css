@@ -35,9 +35,29 @@
     font-size: xx-large;
     margin: 1.8% auto 0.5%;
 }
-.box{
+#voto .box{
     display: flex;
     justify-content: space-between;
     margin-bottom: 2%;
+}
+#voto label{
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 0.104rem;
+}
+#voto select{
+    padding: 0.2rem 0.5rem;
+}
+#dadosVoto .info{
+    margin: 1.2rem auto;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.125rem;
+}
+#dadosVoto .info span{
+    font-weight: bold;
+}
+#imagens img{
+    margin: -40px auto;
 }
 

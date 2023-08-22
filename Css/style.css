@@ -80,18 +80,6 @@ h1{
   
   }
   
-  /* Estilos para a seta */
-  .seta {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid black;
-    position: absolute;
-    right: 30px;
-    transform: rotate(90deg);
-  }
-  
   /* Estilos para a aba */
   .aba {
     margin: auto;
