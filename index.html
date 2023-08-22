@@ -30,8 +30,6 @@
 
                 <input type="email" id="email" required placeholder="E-mail">
 
-                <input type="tel" id="telefone" required placeholder="Telefone">
-
                 <br>
 
                 <select id="estado_cliente" name="estado">
@@ -68,7 +66,7 @@
                 <input type="text" name="cidade" id="cidade_cliente" placeholder="Cidade">
 
                 <br><br>
-                <button id="btn_form" type="button">COMEÇAR</button>
+                <button id="btn_form_start" type="button" onclick="abrirVoto()" class="btn">COMEÇAR</button>
             </form>
         </div>
         <br>
@@ -77,23 +75,38 @@
 
     <section>
 
-        <!-- Primeiro retângulo - Dados Pessoais -->
+        <!-- Segundo retângulo - Voto -->
         <div class="retangulo2" onclick="toggleAba2()">
             <div class="titulo">2 - Registro de Votos</div>
             <div class="seta"></div>
         </div>
         <div class="aba" id="abaFormulario2">
-            <h3>Presidente</h3>
+            <div id="boxName">
+                <div>Cidadão: <span id="nome_cliente"></span></div>
+                <div>CPF:: <span id="cpf_cliente"></span></div>
+                <!-- Se quiser colocar outro dado pessoal / erro no registro dos dados -->
+                <button id="btn_erro" type="button">X</button>
+            </div>
+            <h2>Presidente (a)</h2>
             <br>
             <div id="box">
-            <div>Nome: <span></span></div>
-            <div>Partido: <span></span></div>
-            <div>Vice-Presidente: <span></span></div>
+            <form action="" method="post">
+                <label for="number">Número:</label>
+                <input type="number" name="number" id="number_dados">
+            </form>
+            <div>Nome: <span class="nome_dados"></span></div>
+            <div>Partido: <span class="partido_dados"></span></div>
+            <div>Vice-Presidente: <span class="vice_dados"></span></div>
             </div>
             <div id="box">
-                <img alt="Foto do Presidente">
+                <span class="imgP_dados"></span>
                 <br>
-                <img src="" alt="Foto do Vice">
+                <span class="imgV_dados"></span>
+            </div>
+
+            <div id="btn_registro">
+                <button id="btn_form_zerar" type="button" onclick="abrirVoto()" class="btn">CORRIGIR</button>
+                <button id="btn_form_registro" type="button" onclick="abrirVoto()" class="btn">REGISTRAR</button>
             </div>
         </div>
         <br>
