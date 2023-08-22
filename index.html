@@ -100,12 +100,13 @@
                 <button id="btn_erro" type="button">X</button>
             </div>
             <h2>Presidente (a)</h2>
+            <img src="" id="img_candidato" alt="">
             <br>
             <div class="box">
             <div id="dadosVoto">
             <form action="" method="post">
                 <label for="number">Número:</label>
-                <select id="num_voto" name="number">
+                <select id="num_voto" name="number" >
                     <option value=""></option>
                     <option value="7">7</option>
                     <option value="10">10</option>
@@ -113,11 +114,12 @@
                     <option value="15">15</option>
                     <option value="17">17</option>
                     <option value="22">22</option>
+                    <img src="Css/img/imgCandidatos/dilma.pnj.jpg" alt="">
                 </select>
             </form>
-            <div>Nome: <span class="nome_dados"></span></div>
-            <div>Partido: <span class="partido_dados"></span></div>
-            <div>Vice-Presidente: <span class="vice_dados"></span></div>
+            <div>Nome: <span id="nome_dados"></span></div>
+            <div>Partido: <span id="partido_dados"></span></div>
+            <div>Vice-Presidente: <span id="vice_dados"></span></div>
         </div>
 
             <div id="imagens">
@@ -129,7 +131,7 @@
             </div>
             </div>
 
-                <button id="btn_form_registro" type="button" onclick="abrirVoto()" class="btn">
+                <button id="btn_form_registro" type="button" class="btn">
                     <span class="art_btn">
                         REGISTRAR
                     </span>
@@ -146,7 +148,7 @@
     </footer>
     
 
-    <script src="Controller/script.js"></script>
+    <script src="Controller/script.js" type="module"></script>
     </div>
 
 </body>
