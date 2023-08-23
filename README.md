@@ -5,7 +5,7 @@
 ## 👨🏽‍💻**Introdução:**
 
 
-`Seja bem-vindo à documentação do sistema de cadastro de usuário e registro de voto eleitoral, desenvolvido pelos alunos do ensino técnico em Desenvolvimento de Sistemas: João Vitor Mangabeira, Maria Machado e Thiago Alcântara, como parte do Projeto Avaliativo-Grupo de GIT e GITHUB.
+`Seja bem-vindo à documentação do sistema de cadastro de usuário e registro de voto eleitoral, desenvolvido pelos alunos do ensino técnico em Desenvolvimento de Sistemas: João Vitor Mangabeira, Maria Machado e Thiago Santos, como parte do Projeto Avaliativo-Grupo de GIT e GITHUB.
 Nesta documentação, vamos compilar nossa visão geral do projeto, nossos objetivos e o funcionamento atual do nosso sistema, que incorpora uma fusão entre inovação criativa e competências técnicas excepcionais.`
 
 ---
