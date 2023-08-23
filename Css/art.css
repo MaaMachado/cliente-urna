@@ -30,6 +30,10 @@
 
 }
 
+#abaFormulario2{
+    visibility: hidden;;
+}
+
 /* Dados dos candidatos que o Cliente vai escolher */
 #abaFormulario2 h2{
     font-size: xx-large;

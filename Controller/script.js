@@ -3,7 +3,9 @@ const btn_mudar_sessao = document.getElementById("btn_form_start");
 const div_dados_usuario = document.getElementById("abaFormulario1");
 const div_registrar = document.getElementById("abaFormulario2");
 let candidato_escolhido = ""
+let vice_candidato = ""
 div_registrar.style.visibility = "hidden"
+div_registrar.style.display = "none"
 let nome_usuario = ""
 let cpf_usuario = ""
 let email_usuario = ""
@@ -70,6 +72,7 @@ btn_mudar_sessao.addEventListener("click", function() {
     div_dados_usuario.classList.add("hidden");
     div_dados_usuario.innerHTML = "<h2>Seus Dados Foram Registrados com Sucesso!</h2><p>Agora você já pode votar!.</p>";
     div_registrar.style.visibility = "visible"
+    div_registrar.style.display = "block"
     inserir_dados_usu()
   } else {
     div_dados_usuario.classList.remove("hidden");
@@ -104,26 +107,33 @@ document.getElementById("num_voto").addEventListener("change", (e)=>{
     let nome_candidatos = document.getElementById('nome_dados')
     let partido_candidatos = document.getElementById('partido_dados')
     let vice_candidatos = document.getElementById('vice_dados')
+    let img_vice = document.getElementById('img_vice')
     console.log(opcoes_select.value);
 
     if(opcoes_select.value == candidatos[0].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[0].nome
+        vice_candidato = candidatos[0].vice
     }else if(opcoes_select.value == candidatos[1].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[1].nome
+        vice_candidato = candidatos[1].vice
     }else if(opcoes_select.value == candidatos[2].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[2].nome
+        vice_candidato = candidatos[2].vice
     }else if(opcoes_select.value == candidatos[3].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[3].nome
+        vice_candidato = candidatos[3].vice
     }else if(opcoes_select.value == candidatos[4].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[4].nome
+        vice_candidato = candidatos[4].vice
     }else if(opcoes_select.value == candidatos[5].numero_eleitoral){
-        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index)
+        mudarCandidatoInfo(imagem_candidato, nome_candidatos, partido_candidatos, vice_candidatos, opcao_index, img_vice)
         candidato_escolhido = candidatos[5].nome
+        vice_candidato = candidatos[5].vice
     }
 })
 
@@ -165,12 +175,13 @@ fetch('http://localhost:3000/api/votos')
   })
   .catch(error => {
     console.error('Erro ao obter votos:', error);
-  });
+});
 
-function mudarCandidatoInfo(img, nome, partido, vice, index){
+function mudarCandidatoInfo(img, nome, partido, vice, index, vice_img){
     img.src = candidatos[index].imagem
     nome.innerHTML = candidatos[index].nome
     partido.textContent = candidatos[index].partido
+    vice_img.src = candidatos[index].imagem_vice
     vice.textContent = candidatos[index].vice
 }
 
