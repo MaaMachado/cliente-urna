@@ -7,14 +7,14 @@ export const candidatos = [
     imagem_vice: "Css/img/imgCandidatos/caoPloretariado.jpg"
     },
     {nome: "Fazueli",
-    numero_eleitoral: "13",
+    numero_eleitoral: "10",
     vice: "Mico Felix",
     partido: "TP",
     imagem: "Css/img/imgCandidatos/fazueli.pnj.jpg",
     imagem_vice: "Css/img/imgCandidatos/ciro.pnj.jpg"
     },
     {nome: "SeereSete Bigodudo",
-    numero_eleitoral: "10",
+    numero_eleitoral: "13",
     vice: "Riritica",
     partido: "PRM",
     imagem: "Css/img/imgCandidatos/cr7CarecaBigodon.jpg",
